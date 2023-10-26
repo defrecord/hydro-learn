@@ -6,11 +6,11 @@ Hydroflow introduces a dataflow based intermediate representation (IR) that enab
 
 This tutorial provides:
 
-An overview of Hydroflow concepts including the dataflow IR and semilattice model
-A hands-on Hydroflow program example to run locally
-Application of Hydroflow optimizations like refactoring and replication
-Makefile, scripts, and instructions for building Hydroflow programs
-After completing this tutorial, you will have hands-on experience with Hydroflow for building correct distributed applications.
+- An overview of Hydroflow concepts including the dataflow IR and semilattice model
+- A hands-on Hydroflow program example to run locally
+- Application of Hydroflow optimizations like refactoring and replication
+- Makefile, scripts, and instructions for building Hydroflow programs
+- After completing this tutorial, you will have hands-on experience with Hydroflow for building correct distributed applications.
 
 The tutorial is based on the research presented in the OOPSLA 2023 Hydroflow paper. Please cite if using:
 
@@ -24,3 +24,68 @@ The tutorial is based on the research presented in the OOPSLA 2023 Hydroflow pap
 
 #+end_src
 
+** 1 Week Course Outline
+
+*** Day 1
+- Intro to distributed systems, challenges with correctness
+- Overview of Hydroflow goals and architecture
+- Hands-on: Setup Hydroflow development environment
+*** Day 2
+- Dive into Hydroflow IR semantics and dataflow formalism
+- Hands-on: Implement a simple distributed program in Hydroflow
+*** Day 3
+- Hydroflow program transformations for refactoring, replication, partitioning
+- Hands-on: Apply transformations to sample programs
+*** Day 4
+- Optimizing programs with Hydroflow - parallelism, scaling, etc.
+- Hands-on: Optimize and evaluate a distributed key-value store
+*** Day 5
+- Hydroflow case studies on infrastructure, applications, consensus protocols
+- Hands-on: Build and optimize a distributed application
+
+** Key Terminology
+- Dataflow formalism: A programming model where computation progresses via flows of data between operations. Enables transformations like partitioning and pipelining.
+- Semilattice: A mathematical structure used to define Hydroflow's IR semantics. Supports deterministic concurrency and mergeability needed for distributions.
+- Refactoring: Restructuring code without changing functionality. Hydroflow can safely refactor code into distributed blocks.
+- Replication: Duplicating code or data. Hydroflow can determine safety of replication for distribution.
+- Partitioning: Splitting data/computation across machines. Hydroflow supports input sharding for scaling.
+** Summary
+- Hydroflow provides a Rust dataflow runtime to ensure correctness of distributed programs
+- It uses a semilattice IR to allow deterministic concurrency and mergeable computation
+- Key transformations like refactoring, replication, and partitioning enabled
+- Case studies show optimizations for performance, scaling, security on real systems
+- Overall, Hydroflow lays groundwork for compiler-driven distribution and optimization
+** Evaluation
+- Strong formal foundations in semilattice theory and dataflow programs
+- Promising performance and scaling results in case studies
+- Limited evaluation on more complex real-world systems so far
+- Proof-of-concept stage currently, full Hydro compiler stack needs development
+- Some concern on usability for average developers
+** Surprising/Unexpected Elements
+- Use of Rust for runtime - language known for performance, not distribution
+- Emphasis on transformations over other aspects like fault-tolerance
+- Lack of comparisons to existing distribution frameworks like Ray, Dask
+** Primer Questions
+- What problem does Hydroflow address for distributed systems?
+- How does Hydroflow enable safe refactoring and replication?
+- What are some key benefits of the dataflow programming model?
+- What results were shown in the Hydroflow case studies?
+** Potential Author Questions
+- How does Hydroflow compare to existing distribution frameworks like Ray and Dask?
+- Have you experimented with applying Hydroflow to larger open source systems?
+- What are the next steps in developing the full Hydro compiler stack?
+- Does Hydroflow provide any fault tolerance mechanisms?
+- How usable is Hydroflow for developers without formal methods expertise?
+** Concepts to Learn
+- Distributed systems architecture patterns
+- Formal models like semilattices and dataflow
+- Rust programming language
+- Compiler theory and program analysis
+- Techniques like refactoring, replication, partitioning
+- Performance modeling and evaluation
+** Annotated Bibliography
+- Valiant, L. G. (1990). A bridging model for parallel computation. Communications of the ACM, 33(8), 103-111. [Impact: 9] - Introduced bulk synchronous parallel model that influenced Hydroflow's dataflow formalism. Should read to understand foundations.
+- Gilmore, S., et al (1997). Semantics of the VPL parallel programming language. The MIT Press. [Impact: 7] - Provided theoretical basis for semilattice model used in Hydroflow IR. Helpful background reading.
+- Ousterhout, J. et al. (2013). The case for RAMCloud. Communications of the ACM, 54(7), 121-130. [Impact: 5] - Motivates need for low-latency distributed storage systems. Good context for Hydroflow goals.
+- Burckhardt, S. et al. (2012). It's Time for Real-Time. Communications of the ACM, 55(8), 78-85. [Impact: 3] - Discusses deterministic concurrency models. Somewhat relevant background.
+- Chambers, C. et al. (1989). Customization: Optimizing compiler technology for SELF. ACM SIGPLAN Notices, 24(3), 146-160. [Impact: 5] - Influential prior work on compiler optimizations. Relevant to Hydroflow's goals.  
