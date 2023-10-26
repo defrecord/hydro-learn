@@ -1,0 +1,26 @@
+* Learn Hydroflow
+
+This repository provides a hands-on tutorial for learning about Hydroflow, a runtime for building fast and correct distributed programs presented at OOPSLA 2023.
+
+Hydroflow introduces a dataflow based intermediate representation (IR) that enables safe optimizations like refactoring, replication, and partitioning for distributed systems. The formal foundations utilize semilattice theory to support deterministic concurrency and mergeable computation.
+
+This tutorial provides:
+
+An overview of Hydroflow concepts including the dataflow IR and semilattice model
+A hands-on Hydroflow program example to run locally
+Application of Hydroflow optimizations like refactoring and replication
+Makefile, scripts, and instructions for building Hydroflow programs
+After completing this tutorial, you will have hands-on experience with Hydroflow for building correct distributed applications.
+
+The tutorial is based on the research presented in the OOPSLA 2023 Hydroflow paper. Please cite if using:
+
+#+begin_src bibtex
+@inproceedings{hydroflow-oopsla2023,
+  title={Hydroflow: A Compiler Target for Fast, Correct Distributed Programs}, 
+  author={...},
+  booktitle={Proceedings of the ACM on Programming Languages (OOPSLA)},
+  year={2023}
+}
+
+#+end_src
+
