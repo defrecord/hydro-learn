@@ -23,6 +23,10 @@ The tutorial is based on the research presented in the OOPSLA 2023 Hydroflow pap
 }
 
 #+end_src
+** Resources
+
+- https://hydro.run/docs/hydroflow/
+- https://hydro.run/docs/hydroflow/concepts/
 
 ** 1 Week Course Outline
 
